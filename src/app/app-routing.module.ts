@@ -12,10 +12,6 @@ const routes: Routes = [
         loadChildren: () => import('./Modules/Shared/Shared.module').then(m => m.SharedModule)
       },
       {
-        path: 'Administrator',
-        loadChildren: () => import('./Modules/Lookups/Administrator.module').then(m => m.AdministratorModule)
-      },
-      {
         path: 'Clients',
         loadChildren: () => import('./Modules/Clients/Clients.module').then(m => m.ClientsModule)
       },

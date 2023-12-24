@@ -10,9 +10,9 @@ import { SharedModule } from './Modules/Shared/Shared.module';
 import { AppConfig } from './app.config';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { API_BASE_URL } from 'src/shared/service-proxies/service-proxies';
 import { AddTokenInterceptor } from '../shared/add-token-interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
+import { API_BASE_URL } from './Modules/Shared/services/api-client.Service';
 
 
 @NgModule({
@@ -28,7 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
   ],
   providers: [
-    { provide: API_BASE_URL, useFactory: () => AppConfig.settings.baseAPIUrl },
+    { provide: API_BASE_URL, useFactory: () => AppConfig.settings.NSwagURL },
     AppConfig,
     {
       provide: APP_INITIALIZER,

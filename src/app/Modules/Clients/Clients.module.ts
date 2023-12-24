@@ -7,11 +7,12 @@ import { SharedModule } from '../Shared/Shared.module';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { TableModule } from 'primeng/table';
-import { ApplicationServiceProxy, JobServiceProxy } from '../../../shared/service-proxies/service-proxies';
 import { ClientsComponent } from './Pages/clients/clients.component';
 import { ClientEditComponent } from './Pages/clients/client-edit/client-edit.component';
 import { ClientsRoutingModule } from './Clients-routing.module';
-
+import { ButtonsModule } from "@progress/kendo-angular-buttons";
+import { GridModule } from '@progress/kendo-angular-grid';
+import { Service } from '../Shared/services/api-client.Service';
 
 @NgModule({
   declarations: [
@@ -28,13 +29,14 @@ import { ClientsRoutingModule } from './Clients-routing.module';
     SharedModule,
     TableModule,
     NgbModule,
+    ButtonsModule,
+    GridModule,
     ToastrModule.forRoot(),
   ],
   providers: [
     ToastrService,
-    JobServiceProxy,
-    ApplicationServiceProxy,
-    BsModalService
+    BsModalService,
+    Service
   ],
   bootstrap: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

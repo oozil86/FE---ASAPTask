@@ -7,25 +7,39 @@
             <h1 class="card-title">Clients</h1>
           </div>
           <div class="d-flex">
-            <button class="btn btn-primary" (click)="OnJobEdited(undefined,JobModal)">Add New Client</button>
+            <button class="btn btn-primary" (click)="OnClientEdited(undefined,ClientModal)">Add New Client</button>
           </div>
         </div>
 
 
-        <ng-template #JobModal let-modal>
+        <ng-template #ClientModal let-modal>
           <div class="modal-header">
-            <h5 class="modal-title">New Job</h5>
+            <h5 class="modal-title">New Client</h5>
             <button type="button" class="btn-close" (click)="close();" aria-label="Close"></button>
           </div>
-          <app-job-edit (JobInserted)="OnJobAdded();close();">
+          <app-client-edit (ClientInserted)="OnClientAdded();close();">
 
-          </app-job-edit>
+          </app-client-edit>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" (click)="close();">Close</button>
           </div>
         </ng-template>
+        <div class="card">
+          <kendo-grid [data]="gridView"
+                      [pageSize]="pageSize"
+                      [skip]="skip"
+                      [pageable]="true"
+                      (pageChange)="pageChange($event)">
+            <kendo-grid-column field="firstName" title="FirstName"> </kendo-grid-column>
+            <kendo-grid-column field="lastName" title="LastName"></kendo-grid-column>
+            <kendo-grid-column field="email" title="Email"></kendo-grid-column>
+            <kendo-grid-column field="phoneNumber" title="Phone Number"> </kendo-grid-column>
+          </kendo-grid>
 
-     
+
+        </div>
+
+
       </div>
      
     </div>

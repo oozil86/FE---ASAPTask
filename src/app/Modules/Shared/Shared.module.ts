@@ -16,6 +16,7 @@ import { SidebarComponent } from './Components/layout/sidebar/sidebar.component'
 import { RouterModule } from '@angular/router';
 import {TableModule} from 'primeng/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GridModule} from '@progress/kendo-angular-grid';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -23,7 +24,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
 @NgModule({
   declarations: [
-    
     BaseComponent,
     FooterComponent,
     NavbarComponent,
@@ -45,6 +45,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NgbCollapseModule,
     PerfectScrollbarModule,
     TableModule,
+    GridModule,
   ],
   providers: [
     {
